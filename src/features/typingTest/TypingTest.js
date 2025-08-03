@@ -29,6 +29,10 @@ const raceTime = 60000;
 store.dispatch(generateWords());
 store.dispatch(resetTimer({ time: raceTime / 1000 }));
 
+function isMobileDevice() {
+  return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+}
+
 function TypingTest({ currentTheme, theme }) {
   const words = useSelector(selectWords);
   const wordIndex = useSelector(selectWordIndex);
@@ -100,8 +104,8 @@ function TypingTest({ currentTheme, theme }) {
     if (timeLeft > 0) {
       input = input.trim();
     }
-    // Play sound for the last character typed (mobile support)
-    if (input.length > inputVal.length) {
+    // Only play sound for mobile devices
+    if (isMobileDevice() && input.length > inputVal.length) {
       // New character added
       const lastChar = input[input.length - 1];
       // Map lastChar to sound (basic: play GENERIC sound)
