@@ -108,10 +108,12 @@ function TypingTest({ currentTheme, theme }) {
     if (isMobileDevice() && input.length > inputVal.length) {
       // New character added
       const lastChar = input[input.length - 1];
-      // Map lastChar to sound (basic: play GENERIC sound)
-      // You can improve this to match the row or special keys if needed
-      if (keySounds[switchValue] && keySounds[switchValue].press && keySounds[switchValue].press.GENERICR0) {
-        new Howl({ src: keySounds[switchValue].press.GENERICR0 }).play();
+      if (keySounds[switchValue] && keySounds[switchValue].press) {
+        if (lastChar === ' ' && keySounds[switchValue].press.SPACE) {
+          new Howl({ src: keySounds[switchValue].press.SPACE }).play();
+        } else if (keySounds[switchValue].press.GENERICR0) {
+          new Howl({ src: keySounds[switchValue].press.GENERICR0 }).play();
+        }
       }
     }
     setInputVal(input);
