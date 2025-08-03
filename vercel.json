@@ -4,8 +4,10 @@
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ],
-  "env": {
-    "NODE_OPTIONS": "--openssl-legacy-provider"
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--openssl-legacy-provider"
+    }
   },
   "github": {
     "enabled": true
