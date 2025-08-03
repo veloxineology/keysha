@@ -149,3 +149,30 @@
 .redo.dark:focus {
   border: 2px solid #ffffff;
 }
+
+@media (max-width: 600px) {
+  .typingcontainer {
+    width: 100vw;
+    max-width: 100vw;
+    border-width: 2px;
+    margin-bottom: 12px;
+  }
+  .wordcontainer {
+    padding: 0.5rem;
+    max-width: 100vw;
+  }
+  .wordarea, .resultarea {
+    height: 3.5rem;
+  }
+  .inputbar {
+    padding: 0.5rem;
+  }
+  .inputbar > input, .typinginput {
+    font-size: 20px;
+    padding: 12px;
+  }
+  .toolbar, .time, .redo {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

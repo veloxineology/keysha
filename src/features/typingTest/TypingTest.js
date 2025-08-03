@@ -21,6 +21,8 @@ import {
 import Word from './../word/Word.js';
 import store from '../store/store';
 import styles from './TypingTest.module.css';
+import { Howl } from 'howler';
+import { keySounds } from '../audioModules/audioModule.js';
 
 const raceTime = 60000;
 
@@ -40,6 +42,7 @@ function TypingTest({ currentTheme, theme }) {
   const dispatch = useDispatch();
 
   const [inputVal, setInputVal] = useState("");
+  const [switchValue] = useState("0"); // default switch sound, can be improved to sync with KeySimulator
 
   const [ticker, setTicker] = useState(null);
   
@@ -96,6 +99,16 @@ function TypingTest({ currentTheme, theme }) {
     let input = e.target.value;
     if (timeLeft > 0) {
       input = input.trim();
+    }
+    // Play sound for the last character typed (mobile support)
+    if (input.length > inputVal.length) {
+      // New character added
+      const lastChar = input[input.length - 1];
+      // Map lastChar to sound (basic: play GENERIC sound)
+      // You can improve this to match the row or special keys if needed
+      if (keySounds[switchValue] && keySounds[switchValue].press && keySounds[switchValue].press.GENERICR0) {
+        new Howl({ src: keySounds[switchValue].press.GENERICR0 }).play();
+      }
     }
     setInputVal(input);
     // }
