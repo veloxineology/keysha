@@ -1,4 +1,4 @@
-# Mechanical Keyboard Simulator - [keysha.vercel.app](https://keysha43.vercel.app)
+# Mechanical Keyboard Simulator - [keysha](https://keysha43.vercel.app)
 ![kbs.im picture](https://github.com/tplai/kbsim/blob/master/src/assets/images/demo.PNG)
 
 Mechanical Keyboard Simulator is website that simulates typing on a variety of custom keyswitches and offers a simple typing test. Currently, it supports 10+ switches, keyboard layouts, and colors for an customizable, satisfying typing experience.
