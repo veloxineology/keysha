@@ -1,4 +1,5 @@
 var path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -6,6 +7,12 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'src/index.html', to: 'index.html' },
+      { from: 'src/assets/images', to: 'assets/images' }
+    ])
+  ],
   module: {
     rules: [
         {
