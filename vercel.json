@@ -15,5 +15,13 @@
   ],
   "env": {
     "NODE_OPTIONS": "--openssl-legacy-provider"
+  },
+  "github": {
+    "enabled": true
+  },
+  "functions": {
+    "api/**/*": {
+      "runtime": "nodejs16.x"
+    }
   }
 }
