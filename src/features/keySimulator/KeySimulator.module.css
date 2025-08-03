@@ -182,3 +182,24 @@
   width: 832px;
   max-width: 80vw;
 }
+
+@media (max-width: 600px) {
+  .selectcontainer,
+  .typingplaceholder,
+  .keyboard {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .keywrapper {
+    min-height: unset;
+    margin-bottom: 2vh;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  body, html {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+}
