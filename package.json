@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --watch",
     "build": "webpack -p",
-    "vercel-build": "webpack -p"
+    "vercel-build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack -p"
   },
   "author": "Thomas Lai",
   "license": "MIT",
